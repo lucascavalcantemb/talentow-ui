@@ -43,10 +43,10 @@
     "tailwind-merge": "^2.4.0"
   },
   "peerDependencies": {
-    "react": ">=16.8",
-    "react-dom": ">=16.8",
-    "@types/react": ">=16.8",
-    "@types/react-dom": ">=16.8"
+    "react": ">=16.8 <19.0",
+    "react-dom": ">=16.8 <19.0",
+    "@types/react": ">=16.8 <19.0",
+    "@types/react-dom": ">=16.8 <19.0"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^8.2.6",
