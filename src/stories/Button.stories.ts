@@ -7,7 +7,10 @@ const meta = {
   title: 'Components/Button',
   component: Button,
   tags: ['autodocs'],
-  args: { onClick: fn() },
+  argTypes: {
+    disabled: { control: 'boolean' }
+  },
+  args: { onClick: fn(), disabled: false }
 } satisfies Meta<typeof Button>;
 
 export default meta;
@@ -51,6 +54,6 @@ export const Outline: Story = {
 export const Secondary: Story = {
   args: {
     children: 'Secondary Button',
-    variant: 'secondary'
+    variant: 'secondary',
   },
 };
