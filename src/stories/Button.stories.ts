@@ -8,6 +8,7 @@ const meta = {
   component: Button,
   tags: ['autodocs'],
   argTypes: {
+    variant: { control: false },
     disabled: { control: 'boolean' }
   },
   args: { onClick: fn(), disabled: false }
