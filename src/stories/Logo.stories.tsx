@@ -7,10 +7,9 @@ const meta = {
   component: Logo,
   tags: ['autodocs'],
   argTypes: {
-    className: { control: 'text' },
     width: { control: 'number' },
-    height: { control: 'number' }
-  }
+    variant: { control: false }
+  },
 } satisfies Meta<typeof Logo>;
 
 export default meta;
@@ -18,8 +17,13 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    className: '',
     width: 100,
-    height: 26
+  }
+};
+
+export const Short: Story = {
+  args: {
+    width: 24,
+    variant: 'short'
   }
 };
