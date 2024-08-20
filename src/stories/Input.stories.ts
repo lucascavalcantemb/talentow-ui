@@ -6,7 +6,7 @@ const meta = {
   title: 'Components/Input',
   component: Input,
   tags: ['autodocs'],
-  args: { onChange: fn() },
+  args: { onChange: fn(), disabled: false },
 } satisfies Meta<typeof Input>;
 
 export default meta;
