@@ -6,14 +6,13 @@ import {
   ThumbsDown,
   ThumbsUp
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/Avatar';
 import { Badge } from '@/components/Badge';
 import { Button } from '@/components/Button';
 import { formatInitials } from '@/utils/format-initials';
-
-
-
+import '@/lib/i18n';
 export interface IJobCardContent {
   jobOffer: {
     title: string;
@@ -37,12 +36,14 @@ export interface IJobCardContent {
 }
 
 export const JobCardContent = ({ jobOffer }: IJobCardContent) => {
+  const { t } = useTranslation();
+
   return (
     <div className="flex w-full items-start justify-between gap-5 rounded-md rounded-t-none border-2 bg-card px-8 py-10">
       <div className="flex w-full flex-col items-start justify-start gap-8">
         <div>
           <strong className="text-2xl font-medium">
-            A MB Labs está contratando um
+            {t('job_card_content.job_opening')}
           </strong>
           <h2 className="text-3xl font-bold text-primary">
             {jobOffer.title}
@@ -64,7 +65,9 @@ export const JobCardContent = ({ jobOffer }: IJobCardContent) => {
         )}
 
         <div className="space-y-1">
-          <span className="text-lg font-bold">Sobre a vaga</span>
+          <span className="text-lg font-bold">
+            {t('job_card_content.job_description')}
+          </span>
           <div
             className="text-base [&>ul]:list-disc [&>ul]:pl-8"
             dangerouslySetInnerHTML={{
@@ -74,7 +77,9 @@ export const JobCardContent = ({ jobOffer }: IJobCardContent) => {
         </div>
 
         <div className="space-y-1">
-          <span className="text-lg font-bold">Requisitos</span>
+          <span className="text-lg font-bold">
+            {t('job_card_content.requirements')}
+          </span>
           <div
             className="text-base [&>ul]:list-disc [&>ul]:pl-8"
             dangerouslySetInnerHTML={{
@@ -85,7 +90,7 @@ export const JobCardContent = ({ jobOffer }: IJobCardContent) => {
 
         <div className="space-y-1">
           <span className="text-lg font-bold">
-            Atividades e responsabilidades
+            {t('job_card_content.responsibilities')}
           </span>
           <div
             className="text-base [&>ul]:list-disc [&>ul]:pl-8"
@@ -96,7 +101,9 @@ export const JobCardContent = ({ jobOffer }: IJobCardContent) => {
         </div>
 
         <div className="space-y-1">
-          <span className="text-lg font-bold">Benefícios</span>
+          <span className="text-lg font-bold">
+            {t('job_card_content.benefits')}
+          </span>
           <div
             className="text-base [&>ul]:list-disc [&>ul]:pl-8"
             dangerouslySetInnerHTML={{
@@ -110,7 +117,9 @@ export const JobCardContent = ({ jobOffer }: IJobCardContent) => {
         <div className="flex w-full flex-col items-center justify-center rounded-lg bg-muted px-5 py-6">
           <Avatar className="size-32 border-4 border-muted-foreground">
             <AvatarImage src={jobOffer.company.logo} />
-            <AvatarFallback className="font-bold text-4xl">{formatInitials(jobOffer.company.name)}</AvatarFallback>
+            <AvatarFallback className="font-bold text-4xl">
+              {formatInitials(jobOffer.company.name)}
+            </AvatarFallback>
           </Avatar>
 
           <strong className="text-bold mt-5 text-lg">
@@ -121,12 +130,12 @@ export const JobCardContent = ({ jobOffer }: IJobCardContent) => {
             type="button"
             className="mt-3 w-full font-bold"
           >
-            Candidatar-se
+            {t('job_card_content.apply_now')}
           </Button>
 
           <span className="mt-7 flex items-center justify-start">
             <ClipboardCheck className="mr-1 size-4" />
-            {`${jobOffer.jobOfferStatus.applications} candidaturas`}
+            {t('job_card_content.applications', { count: jobOffer.jobOfferStatus.applications })}
           </span>
 
           <span className="flex items-center justify-start">
@@ -136,7 +145,9 @@ export const JobCardContent = ({ jobOffer }: IJobCardContent) => {
         </div>
 
         <div className="flex w-full flex-col items-center justify-center rounded-lg bg-muted px-5 py-5">
-          <span className="text-lg font-bold">Gostou dessa vaga?</span>
+          <span className="text-lg font-bold">
+            {t('job_card_content.like_this_job')}
+          </span>
 
           <div className="mt-3 flex w-full items-center gap-2">
             <Button
@@ -144,25 +155,29 @@ export const JobCardContent = ({ jobOffer }: IJobCardContent) => {
               variant="outline"
             >
               <ThumbsUp className="mr-2 size-4" />
-              SIM
+              {t('job_card_content.yes')}
             </Button>
             <Button
               className="w-full border-2 border-red-500 bg-transparent text-red-500 hover:from-rose-500 hover:to-red-500"
               variant="outline"
             >
               <ThumbsDown className="mr-2 size-4" />
-              NÃO
+              {t('job_card_content.no')}
             </Button>
           </div>
         </div>
 
         <div className="flex w-full items-center justify-between rounded-lg bg-muted px-5 py-5">
-          <span className="text-lg font-bold">Favoritar</span>
+          <span className="text-lg font-bold">
+            {t('job_card_content.favorite')}
+          </span>
           <Star className="stroke-primary" />
         </div>
 
         <div className="flex w-full items-center justify-between rounded-lg bg-muted px-5 py-5">
-          <span className="text-lg font-bold">Compartilhe</span>
+          <span className="text-lg font-bold">
+            {t('job_card_content.share')}
+          </span>
           <Share2 className="stroke-primary" />
         </div>
       </div>
