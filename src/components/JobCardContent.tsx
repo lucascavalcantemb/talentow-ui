@@ -21,6 +21,7 @@ export interface IJobCardContent {
     activity: string;
     benefit: string;
     views: number;
+    favorite: boolean;
     company: {
       name: string;
       logo?: string;
@@ -33,9 +34,14 @@ export interface IJobCardContent {
       title: string;
     }[]
   };
+  onApply: () => void;
+  onLike: () => void;
+  onDislike: () => void;
+  onFavorite: () => void;
+  onShare: () => void;
 }
 
-export const JobCardContent = ({ jobOffer }: IJobCardContent) => {
+export const JobCardContent = ({ jobOffer, onApply, onDislike, onFavorite, onLike, onShare }: IJobCardContent) => {
   const { t } = useTranslation();
 
   return (
@@ -129,6 +135,7 @@ export const JobCardContent = ({ jobOffer }: IJobCardContent) => {
           <Button
             type="button"
             className="mt-3 w-full font-bold"
+            onClick={onApply}
           >
             {t('job_card_content.apply_now')}
           </Button>
@@ -153,6 +160,7 @@ export const JobCardContent = ({ jobOffer }: IJobCardContent) => {
             <Button
               className="w-full border-2 border-primary bg-transparent text-primary"
               variant="outline"
+              onClick={onLike}
             >
               <ThumbsUp className="mr-2 size-4" />
               {t('job_card_content.yes')}
@@ -160,6 +168,7 @@ export const JobCardContent = ({ jobOffer }: IJobCardContent) => {
             <Button
               className="w-full border-2 border-red-500 bg-transparent text-red-500 hover:from-rose-500 hover:to-red-500"
               variant="outline"
+              onClick={onDislike}
             >
               <ThumbsDown className="mr-2 size-4" />
               {t('job_card_content.no')}
@@ -167,14 +176,20 @@ export const JobCardContent = ({ jobOffer }: IJobCardContent) => {
           </div>
         </div>
 
-        <div className="flex w-full items-center justify-between rounded-lg bg-muted px-5 py-5">
+        <div
+          className="flex w-full items-center justify-between rounded-lg bg-muted px-5 py-5"
+          onClick={onFavorite}
+        >
           <span className="text-lg font-bold">
             {t('job_card_content.favorite')}
           </span>
-          <Star className="stroke-primary" />
+          <Star className={`stroke-primary ${jobOffer.favorite ? 'fill-primary/60' : ''}`} />
         </div>
 
-        <div className="flex w-full items-center justify-between rounded-lg bg-muted px-5 py-5">
+        <div
+          className="flex w-full items-center justify-between rounded-lg bg-muted px-5 py-5"
+          onClick={onShare}
+        >
           <span className="text-lg font-bold">
             {t('job_card_content.share')}
           </span>

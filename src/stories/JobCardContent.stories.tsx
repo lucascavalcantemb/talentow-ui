@@ -38,7 +38,13 @@ const meta = {
         },
       ],
       views: 189,
-    }
+      favorite: true,
+    },
+    onApply: () => { },
+    onLike: () => { },
+    onDislike: () => { },
+    onFavorite: () => { },
+    onShare: () => { },
   },
   tags: ['autodocs'],
   parameters: {
