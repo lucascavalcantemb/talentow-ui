@@ -1,7 +1,6 @@
 "use client";
 
-import { Skeleton } from "./skeleton";
-
+import { Skeleton } from "@/components/Skeleton";
 
 const JobCardSkeleton = () => {
   return (
