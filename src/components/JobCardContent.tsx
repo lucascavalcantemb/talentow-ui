@@ -34,14 +34,14 @@ export interface IJobCardContent {
       title: string;
     }[]
   };
-  onApply: () => void;
-  onLike: () => void;
-  onDislike: () => void;
-  onFavorite: () => void;
-  onShare: () => void;
+  onApply?: () => void;
+  onLike?: () => void;
+  onDislike?: () => void;
+  onFavorite?: () => void;
+  onShare?: () => void;
 }
 
-export const JobCardContent = ({ jobOffer, onApply, onDislike, onFavorite, onLike, onShare }: IJobCardContent) => {
+const JobCardContent = ({ jobOffer, onApply, onDislike, onFavorite, onLike, onShare }: IJobCardContent) => {
   const { t } = useTranslation();
 
   return (
@@ -199,3 +199,6 @@ export const JobCardContent = ({ jobOffer, onApply, onDislike, onFavorite, onLik
     </div>
   );
 };
+JobCardContent.displayName = 'JobCardContent';
+
+export { JobCardContent }
