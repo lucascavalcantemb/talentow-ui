@@ -36,7 +36,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: (args) => (
-    <div className='w-[768px]'>
+    <div className='w-[1024px]'>
       <Accordion type='single'>
         <AccordionItem value="item-1" className='mb-2'>
           <AccordionTrigger className='w-full'>

@@ -13,7 +13,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   render: () => (
-    <div className='w-[768px]'>
+    <div className='w-[1024px]'>
       <JobCardSkeleton />
     </div>
   )

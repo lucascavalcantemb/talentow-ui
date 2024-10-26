@@ -49,7 +49,7 @@ export const Default: Story = {
     <div className='w-full flex justify-center mt-10'>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant="outline">Open</Button>
+          <Button variant="secondary">Open</Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-56">
           <DropdownMenuLabel>My Account</DropdownMenuLabel>

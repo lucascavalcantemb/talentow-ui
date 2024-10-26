@@ -1,0 +1,22 @@
+{
+  "job_card_content": {
+    "job_opening": "A MB Labs está contratando um",
+    "job_description": "Sobre a vaga",
+    "requirements": "Requisitos",
+    "responsibilities": "Atividades e responsabilidades",
+    "benefits": "Benefícios",
+    "apply_now": "Candidatar-se",
+    "applications": "Candidaturas",
+    "applications_zero": "{{count}} candidaturas",
+    "applications_one": "{{count}} candidatura",
+    "applications_other": "{{count}} candidaturas",
+    "views_zero": "visualizações",
+    "views_one": "visualização",
+    "views_other": "visualizações",
+    "like_this_job": "Gostou dessa vaga?",
+    "yes": "SIM",
+    "no": "NÃO",
+    "favorite": "Favoritar",
+    "share": "Compartilhe"
+  }
+}

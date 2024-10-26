@@ -1,0 +1,22 @@
+{
+  "job_card_content": {
+    "job_opening": "MB Labs is hiring a",
+    "job_description": "About the position",
+    "requirements": "Requirements",
+    "responsibilities": "Activities and responsibilities",
+    "benefits": "Benefits",
+    "apply_now": "Apply now",
+    "applications": "Applications",
+    "applications_zero": "{{count}} applications",
+    "applications_one": "{{count}} application",
+    "applications_other": "{{count}} applications",
+    "views_zero": "views",
+    "views_one": "view",
+    "views_other": "views",
+    "like_this_job": "Did you like this job?",
+    "yes": "YES",
+    "no": "NO",
+    "favorite": "Favorite",
+    "share": "Share"
+  }
+}

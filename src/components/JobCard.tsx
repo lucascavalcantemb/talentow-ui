@@ -22,10 +22,11 @@ export interface IJobCard {
       logo?: string;
     };
   };
-  textApply: string
+  textApply: string;
+  onApply?: () => void;
 }
 
-const JobCard = ({ className, jobOffer, textApply }: IJobCard) => {
+const JobCard = ({ className, jobOffer, textApply, onApply }: IJobCard) => {
   return (
     <div className={cn('flex w-full cursor-pointer items-center justify-between rounded-md border-2 bg-card px-5 py-3 hover:bg-muted/50 hover:no-underline data-[state=open]:rounded-b-none data-[state=open]:bg-muted', className)}>
       <div className="flex flex-col items-start justify-start gap-2">
@@ -69,7 +70,7 @@ const JobCard = ({ className, jobOffer, textApply }: IJobCard) => {
         </div>
       </div>
 
-      <Button>{textApply}</Button>
+      <Button type="button" onClick={onApply}>{textApply}</Button>
     </div>
   );
 };
