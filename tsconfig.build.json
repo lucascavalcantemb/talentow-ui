@@ -7,19 +7,12 @@
     "module": "NodeNext",
     "sourceMap": false,
     "declaration": true,
-    "lib": [
-      "ES2022",
-      "DOM",
-      "DOM.Iterable"
-    ],
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "baseUrl": ".",
     "paths": {
-      "@/*": [
-        "./src/*"
-      ]
-    }
+      "@/*": ["./src/*"]
+    },
+    "resolveJsonModule": true
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }
