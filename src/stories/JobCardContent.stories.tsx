@@ -40,6 +40,7 @@ const meta = {
       views: 189,
       favorite: true,
     },
+    isAccordion: false,
     onApply: () => { },
     onLike: () => { },
     onDislike: () => { },
