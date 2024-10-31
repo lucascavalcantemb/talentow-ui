@@ -159,7 +159,9 @@ const JobCardContent = ({
 
           <span className="flex items-center justify-start">
             <Eye className="mr-1 size-4" />
-            {`${jobOffer.views} visualizações`}
+            {t("job_card_content.views", {
+              count: jobOffer.views,
+            })}
           </span>
         </div>
 

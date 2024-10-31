@@ -37,7 +37,7 @@ const meta = {
           title: "AWS"
         },
       ],
-      views: 189,
+      views: 100,
       favorite: true,
     },
     isAccordion: false,
