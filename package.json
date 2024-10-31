@@ -19,12 +19,18 @@
       "types": "./dist/src/index.d.ts",
       "default": "./dist/src/index.mjs"
     },
-    "./styles.css": "./dist/src/index.css",
+    "./styles.css": "./dist/src/styles/index.css",
     "./tailwind-preset": {
       "import": "./dist/tailwind.config.mjs",
       "require": "./dist/tailwind.config.js",
       "types": "./dist/tailwind.config.d.ts",
       "default": "./dist/tailwind.config.mjs"
+    },
+    "./i18n": {
+      "import": "./dist/src/lib/i18n.mjs",
+      "require": "./dist/src/lib/i18n.js",
+      "types": "./dist/src/lib/i18n.d.ts",
+      "default": "./dist/src/lib/i18n.mjs"
     }
   },
   "scripts": {
@@ -40,16 +46,16 @@
     "@radix-ui/react-slot": "^1.1.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "i18next": "^23.16.4",
     "lucide-react": "^0.453.0",
-    "react-i18next": "^15.1.0",
     "tailwind-merge": "^2.5.4"
   },
   "peerDependencies": {
     "@types/react": ">=16.8 <19.0",
     "@types/react-dom": ">=16.8 <19.0",
     "react": ">=16.8 <19.0",
-    "react-dom": ">=16.8 <19.0"
+    "react-dom": ">=16.8 <19.0",
+    "i18next": ">=23.16.4",
+    "react-i18next": ">=15.1.0"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^8.3.6",

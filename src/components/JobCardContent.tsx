@@ -13,7 +13,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/Avatar";
 import { Badge } from "@/components/Badge";
 import { Button } from "@/components/Button";
 import { formatInitials } from "@/utils/format-initials";
-import "@/lib/i18n";
+
+import '@/lib/i18n'
 
 export interface IJobCardContent {
   jobOffer: {
@@ -66,7 +67,7 @@ const JobCardContent = ({
         </div>
 
         {jobOffer.jobOfferTechnology.length > 0 && (
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 flex-wrap">
             {jobOffer?.jobOfferTechnology?.map((technology) => (
               <Badge
                 key={technology.id}
