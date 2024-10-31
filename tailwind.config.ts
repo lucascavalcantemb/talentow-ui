@@ -9,7 +9,6 @@ if (process.env.NODE_ENV === 'production') {
   content.push('!./src/**/*.stories.{ts,tsx}')
 }
 
-
 const config = {
   darkMode: ['class'],
   safelist: ['dark'],

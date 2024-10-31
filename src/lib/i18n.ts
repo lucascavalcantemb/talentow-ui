@@ -4,6 +4,7 @@ import { initReactI18next } from 'react-i18next';
 import enJSON from '@/locales/en/en.json';
 import ptBRJSON from '@/locales/pt-BR/pt-BR.json';
 
+const i18nInstance = i18n.createInstance();
 
 const i18nConfig: InitOptions = {
   debug: true,
@@ -22,6 +23,6 @@ const i18nConfig: InitOptions = {
   },
 };
 
-i18n.use(initReactI18next).init(i18nConfig);
+i18nInstance.use(initReactI18next).init(i18nConfig);
 
-export default i18nConfig;
+export default i18nInstance;
