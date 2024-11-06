@@ -43,6 +43,7 @@
     "@radix-ui/react-accordion": "^1.2.1",
     "@radix-ui/react-avatar": "^1.1.1",
     "@radix-ui/react-dropdown-menu": "^2.1.2",
+    "@radix-ui/react-select": "^2.1.2",
     "@radix-ui/react-slot": "^1.1.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
@@ -52,9 +53,9 @@
   "peerDependencies": {
     "@types/react": ">=16.8 <19.0",
     "@types/react-dom": ">=16.8 <19.0",
+    "i18next": ">=23.16.4",
     "react": ">=16.8 <19.0",
     "react-dom": ">=16.8 <19.0",
-    "i18next": ">=23.16.4",
     "react-i18next": ">=15.1.0"
   },
   "devDependencies": {
