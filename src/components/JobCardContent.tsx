@@ -43,6 +43,21 @@ export interface IJobCardContent {
   onDislike?: () => void;
   onFavorite?: () => void;
   onShare?: () => void;
+  i18n?: {
+    jobOpening?: string;
+    jobDescription?: string;
+    requirements?: string;
+    responsibilities?: string;
+    benefits?: string;
+    applyNow?: string;
+    applications?: string;
+    views?: string;
+    likeThisJob?: string;
+    yes?: string;
+    no?: string;
+    favorite?: string;
+    share?: string;
+  }
 }
 
 const JobCardContent = ({
@@ -53,6 +68,7 @@ const JobCardContent = ({
   onFavorite,
   onLike,
   onShare,
+  i18n,
 }: IJobCardContent) => {
   const { t } = useTranslation();
 
@@ -61,7 +77,7 @@ const JobCardContent = ({
       <div className="flex w-full flex-col items-start justify-start gap-8">
         <div>
           <strong className="text-2xl font-medium">
-            {t("job_card_content.job_opening")}
+            {i18n?.jobOpening ?? t("job_card_content.job_opening")}
           </strong>
           <h2 className="text-3xl font-bold text-primary">{jobOffer.title}</h2>
         </div>
@@ -82,7 +98,7 @@ const JobCardContent = ({
 
         <div className="space-y-1">
           <span className="text-lg font-bold">
-            {t("job_card_content.job_description")}
+            {i18n?.jobDescription ?? t("job_card_content.job_description")}
           </span>
           <div
             className="text-base [&>ul]:list-disc [&>ul]:pl-8"
@@ -94,7 +110,7 @@ const JobCardContent = ({
 
         <div className="space-y-1">
           <span className="text-lg font-bold">
-            {t("job_card_content.requirements")}
+            {i18n?.requirements ?? t("job_card_content.requirements")}
           </span>
           <div
             className="text-base [&>ul]:list-disc [&>ul]:pl-8"
@@ -106,7 +122,7 @@ const JobCardContent = ({
 
         <div className="space-y-1">
           <span className="text-lg font-bold">
-            {t("job_card_content.responsibilities")}
+            {i18n?.responsibilities ?? t("job_card_content.responsibilities")}
           </span>
           <div
             className="text-base [&>ul]:list-disc [&>ul]:pl-8"
@@ -118,7 +134,7 @@ const JobCardContent = ({
 
         <div className="space-y-1">
           <span className="text-lg font-bold">
-            {t("job_card_content.benefits")}
+            {i18n?.benefits ?? t("job_card_content.benefits")}
           </span>
           <div
             className="text-base [&>ul]:list-disc [&>ul]:pl-8"
@@ -147,19 +163,19 @@ const JobCardContent = ({
             className="mt-3 w-full font-bold"
             onClick={onApply}
           >
-            {t("job_card_content.apply_now")}
+            {i18n?.applyNow ?? t("job_card_content.apply_now")}
           </Button>
 
           <span className="mt-7 flex items-center justify-start">
             <ClipboardCheck className="mr-1 size-4" />
-            {t("job_card_content.applications", {
+            {i18n?.applications ?? t("job_card_content.applications", {
               count: jobOffer.jobOfferStatus.applications,
             })}
           </span>
 
           <span className="flex items-center justify-start">
             <Eye className="mr-1 size-4" />
-            {t("job_card_content.views", {
+            {i18n?.views ?? t("job_card_content.views", {
               count: jobOffer.views,
             })}
           </span>
@@ -167,7 +183,7 @@ const JobCardContent = ({
 
         <div className="flex w-full flex-col items-center justify-center rounded-lg bg-muted px-5 py-5">
           <span className="text-lg font-bold">
-            {t("job_card_content.like_this_job")}
+            {i18n?.likeThisJob ?? t("job_card_content.like_this_job")}
           </span>
 
           <div className="mt-3 flex w-full items-center gap-2">
@@ -177,7 +193,7 @@ const JobCardContent = ({
               onClick={onLike}
             >
               <ThumbsUp className="mr-2 size-4" />
-              {t("job_card_content.yes")}
+              {i18n?.yes ?? t("job_card_content.yes")}
             </Button>
             <Button
               className="w-full border-2 border-red-500 bg-transparent text-red-500 hover:from-rose-500 hover:to-red-500"
@@ -185,7 +201,7 @@ const JobCardContent = ({
               onClick={onDislike}
             >
               <ThumbsDown className="mr-2 size-4" />
-              {t("job_card_content.no")}
+              {i18n?.no ?? t("job_card_content.no")}
             </Button>
           </div>
         </div>
@@ -195,7 +211,7 @@ const JobCardContent = ({
           onClick={onFavorite}
         >
           <span className="text-lg font-bold">
-            {t("job_card_content.favorite")}
+            {i18n?.favorite ?? t("job_card_content.favorite")}
           </span>
           <Star
             className={`stroke-primary ${jobOffer.favorite ? "fill-primary/60" : ""
@@ -208,7 +224,7 @@ const JobCardContent = ({
           onClick={onShare}
         >
           <span className="text-lg font-bold">
-            {t("job_card_content.share")}
+            {i18n?.share ?? t("job_card_content.share")}
           </span>
           <Share2 className="stroke-primary" />
         </div>
